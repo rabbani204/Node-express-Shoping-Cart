@@ -11,9 +11,10 @@ var passport=require('passport');
 var flash=require('connect-flash');
 var validator=require('express-validator');
 var MongoStore=require('connect-mongo')(session);
-mongoose.connect('mongodb://test:test@ds131687.mlab.com:31687/shopping');
+mongoose.connect('mongodb://test:test@ds127375.mlab.com:27375/todo');
 var routes = require('./routes/index');
 var userRoutes=require('./routes/user');
+var adminRoutes= require('./routes/admin');
 var app = express();
 require('./config/passport');
 // view engine setup
@@ -47,6 +48,7 @@ app.use(function(req ,res, next){
 
 app.use('/user', userRoutes);
 app.use('/',routes);
+app.use('/admin', adminRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -72,7 +74,7 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
+  res.status(err.status || 5000);
   res.render('error', {
     message: err.message,
     error: {}
