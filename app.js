@@ -14,7 +14,10 @@ var MongoStore=require('connect-mongo')(session);
 mongoose.connect('mongodb://test:test@ds127375.mlab.com:27375/todo');
 var routes = require('./routes/index');
 var userRoutes=require('./routes/user');
-var adminRoutes= require('./routes/admin');
+
+var auth = require('./routes/admin');
+var dashbord = require('./routes/dashbord');
+
 var app = express();
 require('./config/passport');
 // view engine setup
@@ -48,7 +51,8 @@ app.use(function(req ,res, next){
 
 app.use('/user', userRoutes);
 app.use('/',routes);
-app.use('/admin', adminRoutes);
+app.use('/admin/auth', auth);
+app.use('/admin/dashbord', dashbord);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

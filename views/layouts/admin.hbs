@@ -9,7 +9,7 @@
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,AngularJS,Angular,Angular2,Angular 2,Angular4,Angular 4,jQuery,CSS,HTML,RWD,Dashboard,React,React.js,Vue,Vue.js">
     <link rel="shortcut icon" href="img/favicon.png">
-    <title>Diu food Court</title>
+    <title>DIU Book Store</title>
 
     <!-- Icons -->
     {{!--
@@ -20,7 +20,7 @@
     {{!--
     <link href="/admin-assets/css/style.css" rel="stylesheet"> --}}
     <!-- Styles required by this views -->
-    <link rel='stylesheet' href='/stylesheets/admin.css'/>
+  <link href="/stylesheets/admin.css" rel="stylesheet">
 
 </head>
 
@@ -66,17 +66,32 @@
                             <i class="icon-speedometer"></i> Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="/admin/addproduct">
-                            <i class="icon-note"></i>Products</a>
+                        <a class="nav-link " href="/admin/dashbord/category">
+                            <i class="icon-puzzle"></i> Category</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/orders">
+                        <a class="nav-link" href="/admin/dashbord/subcategory">
+                            <i class="icon-puzzle"></i> Subcategory</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a class="nav-link " href="/admin/dashbord/products">
+                            <i class="icon-note"></i>Products</a>
+                    </li>
+                    {{!-- <li class="nav-item">
+                        <a class="nav-link" href="/admin/dashbord/users">
+                            <i class="icon-note"></i>User</a>
+                    </li>--}}
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/dashbord/orders">
                             <i class="icon-note"></i>Orders</a>
                     </li>
 
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="/admin/logout">
+                        <a class="nav-link" href="/admin/dashbord/logout">
                             <i class="icon-star"></i>Logout</a>
                     </li>
                 </ul>
@@ -116,7 +131,7 @@
     <!-- Custom scripts required by this view -->
     {{!--
     <script src="/admin-assets/js/views/main.js"></script> --}}
-    <script src="/js/admin.js"></script>
+	<script src="/javascripts/admin.js"></script>
 
 </body>
 

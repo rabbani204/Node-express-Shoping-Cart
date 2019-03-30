@@ -1,10 +1,45 @@
-var mongoose=require('mongoose');
-var Schema=mongoose.Schema;
-
-var schema=new Schema({
-  imagePath:{type:String, required:true},
-  title:{type:String, required:true},
-  description:{type:String, required:true},
-  price:{type:Number, required:true}
+var mongoose = require('mongoose');
+var bcrypt = require('bcryptjs');
+var ProductSchema = mongoose.Schema({
+	title: {
+		type: String,
+		index: true
+	},
+	titleen: {
+		type: String,
+		index: true
+	},
+	description: {
+		type: String,
+		index: true
+	},
+	category: {
+		type: String
+	},
+	image:{
+		type: String
+	},
+	image_mime:{
+		type: String
+	},
+	subcategory: {
+		type: String
+	},
+	price: {
+		type: String
+	},
+	discount: {
+		type: String
+	},
+	discountprice: {
+		type: String
+	},
+	createdby: {
+		type: String
+	},
+	createdat: {
+		type: String
+	}
 });
-module.exports=mongoose.model('Product',schema);
+
+var Product = module.exports = mongoose.model('Product', ProductSchema);

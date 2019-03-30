@@ -5,11 +5,11 @@ var Product = require('../models/product');
 var Order = require('../models/order');
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('general/index');
+  res.render('general/index', { layout: 'generallayouts'});
 });
 
 router.get('/admin/logout', function(req, res, next){
-  res.render('general/index');
+  res.render('general/index', { layout: 'admin'});
 })
 
 router.get('/order', function (req, res, next) {
